@@ -1,3 +1,3 @@
 # Code Branch
 
-The actual code for the project
+The total code for the project
