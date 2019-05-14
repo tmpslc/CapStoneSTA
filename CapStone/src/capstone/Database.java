@@ -1,15 +1,19 @@
 package capstone;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author nshuaib536
- */
+import java.sql.*;
 public class Database {
-    
+    public void Db(String args[])
+    {
+       final String DB_URl = "jdbc:mysql://localhost:3306/child?zeroDateTimeBehavior=convertToNull";
+       final String SEL_QUERY = "select first_name, last_name from child";
+       try (
+               Connection connection = DriverManager.getConnection(DB_URl,"test","test"); 
+               Statement statement = connection.createStatement();
+               ResultSet resultSet = statement.executeQuery(SEL_QUERY) ){
+           
+       }
+    catch (SQLException e)
+    {
+        e.printStackTrace();
+}
+    }
 }
