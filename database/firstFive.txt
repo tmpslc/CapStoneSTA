@@ -1,0 +1,7 @@
+FirstName	LastName	HomeNum		Street		City		State		Zip
+
+Michael		Doe		1321		Market Street	Lee's Summit	MO		64082
+Nathan		Good		5342		Regatta Dr	Lee's Summit	MO		64082
+Carson		Keplar		7894		Opal Street	Raytown		MO		64133
+Grady		Newman		4127		June Street	Grandview	MO		64030
+Joe		Smith		6381		Loop Road	Grandview	MO		64030
