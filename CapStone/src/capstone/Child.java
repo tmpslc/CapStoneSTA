@@ -23,7 +23,20 @@ public class Child {
     
     public void setAddress(String address)
     {
-        this.address = address;
+        //takes in address and splits at every space
+        String[] splitAddress = address.split(" ");
+        
+        try {
+            //create Integer called houseNum and sets it to the first split
+            Integer houseNum = Integer.parseInt(splitAddress[0]);
+            //create String called street and sets it to the second split
+            String street = splitAddress[1];
+            String city = splitAddress[2];
+            String state = splitAddress[3];
+            Integer zipNum = Integer.parseInt(splitAddress[4]);
+        } catch (NullPointerException nullPointerException) {
+            System.out.println(nullPointerException.getMessage());
+        }
     }
     
     public String getAddress()
