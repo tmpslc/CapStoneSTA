@@ -21,7 +21,35 @@ public class Child {
         this.lastName = lastName;
     }
     
-    public void set
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+    
+    public String getAddress()
+    {
+        return address;
+    }
+    
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+    
+    public String getFirstName()
+    {
+        return firstName;
+    }
+    
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+    
+    public String getLastName()
+    {
+        return lastName;
+    }
     
     @Override
     public String toString() 
