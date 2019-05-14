@@ -11,4 +11,15 @@ public class CapStone {
         
     }
     
+    
+    public String enterName()
+    {
+        
+    }
+    
+    public String enterAddress()
+    {
+        
+    }
+    
 }
