@@ -11,23 +11,3 @@ CREATE TABLE `child` (
 	  `dir` varchar(2) DEFAULT NULL,
 	  PRIMARY KEY (`idchild`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-INSERT INTO `capstonesta`.`child`
-(`idchild`,
-	`first_name`,
-	`last_name`,
-	`city`,
-	`street`,
-	`zip`,
-	`state`,
-	`housenum`,
-	`dir`)
-VALUES
-(<{idchild: 1}>,
-	<{first_name: test}>,<{last_name: test}>,
-	<{city: test}>,
-	<{street: test}>,
-	<{zip: 425}>,
-	<{state: te}>,
-	<{housenum: 1234}>,
-	<{dir:se}>);
-
