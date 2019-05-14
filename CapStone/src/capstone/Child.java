@@ -54,6 +54,9 @@ public class Child {
     @Override
     public String toString() 
     {
-        return 
+        return String.format("First Name:%s%n"
+                + "Last Name:%s%n"
+                + "Address:%s%n",
+                firstName, lastName, address);
     }
 }
