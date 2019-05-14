@@ -10,16 +10,16 @@ package capstone;
  * @author adiaz939
  */
 public class Child {
-    private String address;
     private String firstName;
     private String lastName;
+    private String address;
     
-    public Child (String address, String firstName, String lastName) //constructor for object Child
+    public Child (String firstName, String lastName, String address) //constructor for object Child
     {
         //initializing address, firstName and lastName
-        this.address = address;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.address = address;
     }
     
     public void setAddress(String address) //setter for address, uses String tokenizer to split the address into different parts
@@ -71,9 +71,9 @@ public class Child {
     @Override
     public String toString() //toString for Child
     {
-        return String.format("First Name:%s%n"
-                + "Last Name:%s%n"
-                + "Address:%s%n",
+        return String.format("First Name: %s%n"
+                + "Last Name: %s%n"
+                + "Address: %s%n",
                 firstName, lastName, address);
     }
 }

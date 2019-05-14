@@ -8,18 +8,6 @@ package capstone;
 
 public class CapStone {
     public static void main(String[] args) {
-        
+
     }
-    
-    
-    public String enterName()
-    {
-        
-    }
-    
-    public String enterAddress()
-    {
-        
-    }
-    
 }
