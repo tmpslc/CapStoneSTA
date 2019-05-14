@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.CheckBox;
 
 public class CapStoneController {
     
