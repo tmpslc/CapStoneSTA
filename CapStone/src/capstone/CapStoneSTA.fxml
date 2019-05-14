@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="capstone.CapStoneController">
+   <left>
+      <VBox prefHeight="550.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField alignment="CENTER" editable="false" text="Kid Check-In">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ScrollPane prefHeight="530.0" prefWidth="400.0">
+              <content>
+                <AnchorPane fx:id="checkInPane" minHeight="0.0" minWidth="0.0" prefHeight="524.0" prefWidth="384.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="550.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField alignment="CENTER" editable="false" text="Address List">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ScrollPane prefHeight="530.0" prefWidth="400.0">
+              <content>
+                <AnchorPane fx:id="addressPane" minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="384.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
