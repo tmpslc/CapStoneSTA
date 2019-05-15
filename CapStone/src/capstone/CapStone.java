@@ -8,7 +8,6 @@ package capstone;
 
 public class CapStone {
     public static void main(String[] args) {
-        
+
     }
-    
 }
