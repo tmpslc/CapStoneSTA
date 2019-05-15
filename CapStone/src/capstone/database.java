@@ -1,6 +1,7 @@
 package capstone;
 import java.sql.*;
-public class Database {
+
+public class database {
     public void Db(String args[])
     {
        final String DB_URl = "jdbc:mysql://localhost:3306/child?zeroDateTimeBehavior=convertToNull";
