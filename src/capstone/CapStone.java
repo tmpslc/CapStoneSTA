@@ -1,14 +1,6 @@
-/*
-Name: Greg Heiman
-Class: Yoast PM
-Date: 3/29/19
-Desc: Movie Theater Project
-*/
-
 package capstone;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,7 +17,7 @@ public class CapStone extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //set root equal to the fxml file
-        Parent root = FXMLLoader.load(getClass().getResource("CapStone.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CapStoneSTA.fxml"));
         
         //create a new scene based on root called scene
         Scene scene = new Scene(root);
