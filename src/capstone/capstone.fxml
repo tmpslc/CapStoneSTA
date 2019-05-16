@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <ScrollPane prefHeight="400.0" prefWidth="298.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane fx:id="checkBoxPane" minHeight="0.0" minWidth="0.0" prefHeight="402.0" prefWidth="298.0" />
+        </content>
+      </ScrollPane>
+   </left>
+   <right>
+      <ScrollPane prefHeight="400.0" prefWidth="310.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="301.0">
+               <children>
+                  <TextArea fx:id="addressTextArea" editable="false" prefHeight="400.0" prefWidth="302.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </right>
+</BorderPane>
