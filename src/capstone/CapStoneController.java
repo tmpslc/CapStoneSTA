@@ -23,6 +23,8 @@ public class CapStoneController {
     private static String DATABASE_URL = "jdbc:mysql://localhost@3306";
 
     public void initialize() {
+        System.out.println("ran");
+        
         Connection dataBaseConnection = getConnection();
         
         ArrayList<CheckBox> boxes = grabAmmountOfKids();
