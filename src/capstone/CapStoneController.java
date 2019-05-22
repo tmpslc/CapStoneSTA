@@ -27,6 +27,7 @@ public class CapStoneController {
 
     private static String DATABASE_URL = "jdbc:mysql://localhost:3306/?user=root";
     private static String CHILD_NAME = "SELECT first_name, last_name FROM capstonesta.child";
+    private static String ADDRESS = "SELECT ";
 
 
     public void initialize() {        
@@ -66,4 +67,6 @@ public class CapStoneController {
         
         return names;
     }
+    
+    
 }
