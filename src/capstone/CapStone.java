@@ -17,7 +17,7 @@ public class CapStone extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //set root equal to the fxml file
-        Parent root = FXMLLoader.load(getClass().getResource("Capstone.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
         
         //create a new scene based on root called scene
         Scene scene = new Scene(root);
