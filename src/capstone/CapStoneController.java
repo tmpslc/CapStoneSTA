@@ -5,29 +5,27 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 
 public class CapStoneController {
     @FXML 
     private ListView checkboxListView = new ListView();
-    @FXML 
-    private TextArea addressTextArea;
-    @FXML 
-    private ScrollPane checkBoxPane;
+    @FXML
+    private ListView addressListView = new ListView();
     
     private ObservableList<String> names = FXCollections.observableArrayList();
 
+    private ObservableList<String> address = FXCollections.observableArrayList();
 
     private static String DATABASE_URL = "jdbc:mysql://localhost:3306/?user=root";
     private static String CHILD_NAME = "SELECT first_name, last_name FROM capstonesta.child";
-    private static String ADDRESS = "SELECT ";
+    private static String ADDRESS_QUERY = "SELECT houseNum, street, zip FROM "
+            + "capstonesta.addr WHERE idAddr = ?";
 
 
     public void initialize() {        
@@ -68,5 +66,23 @@ public class CapStoneController {
         return names;
     }
     
-    
+    @FXML
+    private void nameClicked(MouseEvent e) {
+        PreparedStatement addrPs;
+        ResultSet addrRs;
+        
+        try {
+            addrPs = CapStoneController.getConnection().prepareStatement(ADDRESS_QUERY);
+            
+            addrPs.setString = Child.idAddr;
+            
+            addrRs = addrPs.executeQuery();
+            
+            if (addrRs.next()) {
+                
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
 }
