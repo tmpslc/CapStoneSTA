@@ -34,7 +34,7 @@ public class CapStoneController {
     private static String CROSS_REFERENCE = "SELECT idAddr FROM capstonesta.child_Address "
             + "WHERE idChild = ?";
     private static String ADDR_ID = "SELECT houseNum, street, zip FROM capstonesta.addr"
-            + "WHERE idAddr = ?";
+            + "WHERE idaddr = ?";
 
 
     public void initialize() {        
@@ -79,13 +79,13 @@ public class CapStoneController {
     private void getAddress() {        
         getIdChild();
         crossReference();
-        addresses = getIdAddress(addresses);
-        
+        getIdAddress(addresses);
+                
         addressListArea.setItems(addresses);
     }
     
     private void getIdChild() {
-        PreparedStatement idChildPs = null;
+        PreparedStatement idChildPs;
         ResultSet idChildRs;
         
         String fullName = (String) checkboxListView.getSelectionModel().getSelectedItem();
@@ -100,7 +100,7 @@ public class CapStoneController {
         System.out.println(firstName);
         
         try {
-            CapStoneController.getConnection().prepareStatement(CHILD_ID);
+            idChildPs = CapStoneController.getConnection().prepareStatement(CHILD_ID);
             
             idChildPs.setString(1, firstName);
             idChildPs.setString(2, lastName);
@@ -116,11 +116,11 @@ public class CapStoneController {
     }
     
     private void crossReference() {
-        PreparedStatement crossReferencePs = null;
+        PreparedStatement crossReferencePs;
         ResultSet crossReferenceRs;
         
         try {
-            CapStoneController.getConnection().prepareStatement(CROSS_REFERENCE);
+            crossReferencePs = CapStoneController.getConnection().prepareStatement(CROSS_REFERENCE);
             
             crossReferencePs.setString(1, Integer.toString(idChild));
             
@@ -135,11 +135,11 @@ public class CapStoneController {
     }
     
     private ObservableList<String> getIdAddress(ObservableList<String> addresses) {
-        PreparedStatement idAddressPs = null;
+        PreparedStatement idAddressPs;
         ResultSet idAddressRs;
         
         try {
-            CapStoneController.getConnection().prepareStatement(ADDR_ID);
+            idAddressPs = CapStoneController.getConnection().prepareStatement(ADDR_ID);
             
             idAddressPs.setString(1, Integer.toString(idAddress));
             
@@ -150,7 +150,7 @@ public class CapStoneController {
                 String street = idAddressRs.getString(2);
                 int zip = idAddressRs.getInt(3);
                                 
-                addresses.add(Integer.toString(houseNum) + " " + street + 
+                addresses.addAll(Integer.toString(houseNum) + " " + street + 
                         " " + Integer.toString(zip));
             }
         } catch (SQLException sqlException) {
