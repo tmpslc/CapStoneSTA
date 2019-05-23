@@ -5,30 +5,27 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 
 public class CapStoneController {
     @FXML 
     private ListView checkboxListView = new ListView();
     @FXML 
     private ListView addressListArea;
-    @FXML 
-    private ScrollPane checkBoxPane;
-    
+
     private ObservableList<String> names = FXCollections.observableArrayList();
     private ObservableList<String> addresses = FXCollections.observableArrayList();
     
     private int idChild = 0;
     private int idAddress = 0;
 
+    private ObservableList<String> address = FXCollections.observableArrayList();
 
     private static String DATABASE_URL = "jdbc:mysql://localhost:3306/?user=root";
     private static String CHILD_NAME = "SELECT first_name, last_name FROM capstonesta.child";

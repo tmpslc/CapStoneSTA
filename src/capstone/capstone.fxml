@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="capstone.CapStoneController">
-   <right>
-      <ScrollPane prefHeight="400.0" prefWidth="310.0" BorderPane.alignment="CENTER">
-         <content>
-            <ListView fx:id="addressListArea" prefHeight="404.0" prefWidth="305.0" />
-         </content>
-      </ScrollPane>
-   </right>
    <left>
-      <ListView fx:id="checkboxListView" prefHeight="400.0" prefWidth="296.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="checkboxListView" onMouseClicked="#getAddress" prefHeight="400.0" prefWidth="296.0" BorderPane.alignment="CENTER" />
    </left>
+   <center>
+      <ListView fx:id="addressListView" prefHeight="400.0" prefWidth="304.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
