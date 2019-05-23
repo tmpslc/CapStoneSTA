@@ -85,7 +85,7 @@ public class LoginWindowController {
                      loginWindow.close();
 
                      //create an FXMLLoader called root set to NewHandicapWindow.fxml
-                     root = FXMLLoader.load(getClass().getResource("Capstone.fxml"));
+                     root = FXMLLoader.load(getClass().getResource("capstone.fxml"));
                      //create a new stage called selectionWindow
                      Stage selectionWindow = new Stage();
                      selectionWindow.setTitle("Capstone");
