@@ -78,36 +78,36 @@ public class LoginWindowController {
              if (rs.next()) {
                  Parent root;
                  
-                 try {
-                     //grab the currently open window and set it to loginWindow
-                     Stage loginWindow = (Stage) loginButton.getScene().getWindow();
-                     //close the window
-                     loginWindow.close();
+                try {
+                    //grab the currently open window and set it to loginWindow
+                    Stage loginWindow = (Stage) loginButton.getScene().getWindow();
+                    //close the window
+                    loginWindow.close();
 
-                     //create an FXMLLoader called root set to NewHandicapWindow.fxml
-                     root = FXMLLoader.load(getClass().getResource("capstone.fxml"));
-                     //create a new stage called selectionWindow
-                     Stage selectionWindow = new Stage();
-                     selectionWindow.setTitle("Capstone");
-                     //set the scene to root
-                     selectionWindow.setScene(new Scene(root, 600, 400));
-                     selectionWindow.show();
-                 } catch (IOException IoException) {
-                     //create a new alert called ioAlert of type ERROR
-                     Alert ioAlert = new Alert(Alert.AlertType.ERROR);
+                    //create an FXMLLoader called root set to NewHandicapWindow.fxml
+                    root = FXMLLoader.load(getClass().getResource("capstone.fxml"));
+                    //create a new stage called selectionWindow
+                    Stage selectionWindow = new Stage();
+                    selectionWindow.setTitle("Capstone");
+                    //set the scene to root
+                    selectionWindow.setScene(new Scene(root, 600, 400));
+                    selectionWindow.show();
+                } catch (IOException IoException) {
+                    //create a new alert called ioAlert of type ERROR
+                    Alert ioAlert = new Alert(Alert.AlertType.ERROR);
 
-                     //set the title
-                     ioAlert.setTitle("Error");
-                     //set the header
-                     ioAlert.setHeaderText("IO Error");
-                     //set the body text
-                     ioAlert.setContentText("Reference the stack trace");
+                    //set the title
+                    ioAlert.setTitle("Error");
+                    //set the header
+                    ioAlert.setHeaderText("IO Error");
+                    //set the body text
+                    ioAlert.setContentText("Reference the stack trace");
 
-                     //show and wait
-                     ioAlert.showAndWait();
+                    //show and wait
+                    ioAlert.showAndWait();
 
-                     IoException.printStackTrace();
-                 }
+                    IoException.printStackTrace();
+                }
              }
          //if the login fails    
          } catch (SQLException sqlException) {

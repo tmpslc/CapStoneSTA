@@ -8,6 +8,6 @@
       <ListView fx:id="checkboxListView" onMouseClicked="#getAddress" prefHeight="400.0" prefWidth="296.0" BorderPane.alignment="CENTER" />
    </left>
    <center>
-      <ListView fx:id="addressListView" prefHeight="400.0" prefWidth="304.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="addressListView" onMouseClicked="#removeAddress" prefHeight="400.0" prefWidth="304.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

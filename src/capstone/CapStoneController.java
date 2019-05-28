@@ -6,18 +6,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 
 public class CapStoneController {
     @FXML 
     private ListView checkboxListView = new ListView();
     @FXML 
-    private ListView addressListArea;
+    private ListView addressListView = new ListView();
 
     private ObservableList<String> names = FXCollections.observableArrayList();
     private ObservableList<String> addresses = FXCollections.observableArrayList();
@@ -25,20 +23,18 @@ public class CapStoneController {
     private int idChild = 0;
     private int idAddress = 0;
 
-    private ObservableList<String> address = FXCollections.observableArrayList();
-
     private static String DATABASE_URL = "jdbc:mysql://localhost:3306/?user=root";
     private static String CHILD_NAME = "SELECT first_name, last_name FROM capstonesta.child";
     private static String CHILD_ID = "SELECT idChild FROM capstonesta.child WHERE first_name = ?"
             + "AND last_name = ?";
-    private static String CROSS_REFERENCE = "SELECT idAddr FROM capstonesta.child_Address "
+    private static String CROSS_REFERENCE = "SELECT idAddr FROM capstonesta.child_address "
             + "WHERE idChild = ?";
-    private static String ADDR_ID = "SELECT houseNum, street, zip FROM capstonesta.addr"
+    private static String ADDR_ID = "SELECT houseNum, street, zip FROM capstonesta.addr "
             + "WHERE idaddr = ?";
 
 
     public void initialize() {        
-        ObservableList<String> names = grabNames();
+        grabNames();
         
         checkboxListView.setItems(names);
     }
@@ -79,9 +75,17 @@ public class CapStoneController {
     private void getAddress() {        
         getIdChild();
         crossReference();
-        getIdAddress(addresses);
-                
-        addressListArea.setItems(addresses);
+        
+        System.out.println(idChild);
+        System.out.println(idAddress);
+        
+        getIdAddress();
+        
+        for (int i = 0; i < addresses.size(); i++) {
+            System.out.println(addresses.get(i));
+        }
+        
+        addressListView.setItems(addresses);
     }
     
     private void getIdChild() {
@@ -92,13 +96,9 @@ public class CapStoneController {
         
         String[] splitName = fullName.split(" ");
         
-        System.out.println(splitName);
-        
         String firstName = splitName[0];
         String lastName = splitName[1];
-        
-        System.out.println(firstName);
-        
+                
         try {
             idChildPs = CapStoneController.getConnection().prepareStatement(CHILD_ID);
             
@@ -134,9 +134,11 @@ public class CapStoneController {
         }
     }
     
-    private ObservableList<String> getIdAddress(ObservableList<String> addresses) {
+    private ObservableList<String> getIdAddress() {
         PreparedStatement idAddressPs;
         ResultSet idAddressRs;
+        String fullAddress = "";
+        boolean duplicate = false;
         
         try {
             idAddressPs = CapStoneController.getConnection().prepareStatement(ADDR_ID);
@@ -149,14 +151,34 @@ public class CapStoneController {
                 int houseNum = idAddressRs.getInt(1);
                 String street = idAddressRs.getString(2);
                 int zip = idAddressRs.getInt(3);
-                                
-                addresses.addAll(Integer.toString(houseNum) + " " + street + 
-                        " " + Integer.toString(zip));
+                
+                fullAddress = Integer.toString(houseNum) + " " + street + 
+                        " " + Integer.toString(zip);                
+
+                for (int i = 0; i < addresses.size(); i++) {
+                    if (fullAddress.equals(addresses.get(i))) {
+                        duplicate = true;
+                    } else {
+                        duplicate = false;
+                    }
+                }
+
+                
+                if (duplicate == false) {
+                    addresses.add(fullAddress);
+                }
             }
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();    
         }
         
         return addresses;
+    }
+    
+    @FXML
+    private void removeAddress() {
+        int selectedIndex = addressListView.getSelectionModel().getSelectedIndex();
+        
+        addressListView.getItems().remove(selectedIndex);
     }
 }
