@@ -19,6 +19,7 @@ public class CapStoneController {
 
     private ObservableList<String> names = FXCollections.observableArrayList();
     private ObservableList<String> addresses = FXCollections.observableArrayList();
+    private ObservableList<String> finalList = FXCollections.observableArrayList();
     
     private int idChild = 0;
     private int idAddress = 0;
@@ -76,16 +77,20 @@ public class CapStoneController {
         getIdChild();
         crossReference();
         
-        System.out.println(idChild);
-        System.out.println(idAddress);
+        String kidName = (String) checkboxListView.getSelectionModel().getSelectedItem();
+
+        ObservableList<String> addressList = FXCollections.observableArrayList();
+        ObservableList<String> kidList = FXCollections.observableArrayList();
         
-        getIdAddress();
+        addressList = getIdAddress();
+
+        kidList.add(kidName);
         
-        for (int i = 0; i < addresses.size(); i++) {
-            System.out.println(addresses.get(i));
+        for (int i = 0; i < addressList.size(); i++) {
+            finalList.add(kidList.get(i) + " : " + addressList.get(i));
         }
         
-        addressListView.setItems(addresses);
+        addressListView.setItems(finalList);        
     }
     
     private void getIdChild() {
@@ -139,6 +144,7 @@ public class CapStoneController {
         ResultSet idAddressRs;
         String fullAddress = "";
         boolean duplicate = false;
+        ObservableList<String> addressList = FXCollections.observableArrayList();
         
         try {
             idAddressPs = CapStoneController.getConnection().prepareStatement(ADDR_ID);
@@ -155,24 +161,26 @@ public class CapStoneController {
                 fullAddress = Integer.toString(houseNum) + " " + street + 
                         " " + Integer.toString(zip);                
 
+                //fixes duplicates
                 for (int i = 0; i < addresses.size(); i++) {
+                    
                     if (fullAddress.equals(addresses.get(i))) {
                         duplicate = true;
                     } else {
                         duplicate = false;
                     }
                 }
-
                 
                 if (duplicate == false) {
                     addresses.add(fullAddress);
+                    addressList.add(fullAddress);
                 }
             }
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();    
         }
         
-        return addresses;
+        return addressList;
     }
     
     @FXML
