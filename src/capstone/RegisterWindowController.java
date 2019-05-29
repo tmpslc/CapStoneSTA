@@ -30,8 +30,10 @@ public class RegisterWindowController {
     private PasswordField passwordField;
     
     private static String DATABASE_URL = "jdbc:mysql://localhost:3306/?user=root";
-    protected static String REGISTER_QUERY =  "INSERT INTO capstonesta.login (username, password) VALUES (?,?)";
-    protected static String CHECK_USERNAME_QUERY = "SELECT * FROM capstonesta.login WHERE username = ?";
+    protected static String REGISTER_QUERY =  "INSERT INTO capstonesta.login "
+            + "(username, password) VALUES (?,?)";
+    protected static String CHECK_USERNAME_QUERY = "SELECT * FROM capstonesta.login "
+            + "WHERE username = ?";
 
     private static Connection getConnection() {
         Connection dataBaseConnection = null;

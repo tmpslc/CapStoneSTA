@@ -74,8 +74,15 @@ public class LoginWindowController {
              //sets the ResultSet to the result of the query
              rs = ps.executeQuery();
 
-             //if the login succeeds
-             if (rs.next()) {
+             if (!rs.next()) {
+                Alert loginAlert = new Alert(Alert.AlertType.WARNING);
+
+                loginAlert.setTitle("Login Error");
+                loginAlert.setHeaderText("Login Not Found");
+                loginAlert.setContentText("Check to make sure all login information is correct");
+
+                loginAlert.showAndWait();
+             } else {
                  Parent root;
                  
                 try {
