@@ -121,4 +121,40 @@ public class LoginWindowController {
             sqlException.printStackTrace();
          }
     }
+    
+    @FXML
+    private void registerButtonPressed() {
+        Parent root;
+        try {
+            //grab the currently open window and set it to selectionWindow
+            Stage loginWindow = (Stage) registerButton.getScene().getWindow();
+            //close the window
+            loginWindow.close();
+
+            //create an FXMLLoader called root set to NewHandicapWindow.fxml
+            root = FXMLLoader.load(getClass().getResource("RegisterWindow.fxml"));
+            //create a new stage called newHandicapWindow
+            Stage registerWindow = new Stage();
+            registerWindow.setTitle("Capstone");
+            //set the scene to root
+            registerWindow.setScene(new Scene(root, 600, 400));
+            registerWindow.show();
+        } catch (IOException IoException) {
+            //create a new alert called ioAlert of type ERROR
+            Alert ioAlert = new Alert(Alert.AlertType.ERROR);
+
+            //set the title
+            ioAlert.setTitle("Error");
+            //set the header
+            ioAlert.setHeaderText("IO Error");
+            //set the body text
+            ioAlert.setContentText("Reference the stack trace");
+
+            //show and wait
+            ioAlert.showAndWait();
+
+            IoException.printStackTrace();
+        }
+    }
+    
 }

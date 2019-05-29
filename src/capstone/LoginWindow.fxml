@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="capstone.LoginWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="capstone.LoginWindowController">
    <children>
       <Label layoutX="263.0" layoutY="117.0" text="Username" />
       <TextField fx:id="usernameTextField" layoutX="147.0" layoutY="146.0" prefHeight="25.0" prefWidth="291.0" />
@@ -20,5 +19,6 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <Button fx:id="registerButton" layoutX="260.0" layoutY="328.0" mnemonicParsing="false" onAction="#registerButtonPressed" text="Register" />
    </children>
 </AnchorPane>
