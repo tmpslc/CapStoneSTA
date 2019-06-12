@@ -1,0 +1,1 @@
+INSERT INTO capstonesta.login (idAccount, username, password) VALUES (1, test, test)

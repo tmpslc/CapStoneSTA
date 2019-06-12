@@ -1,0 +1,11 @@
+idchild,first_name,last_name,city,street,zip,state,housenum,dir
+1,Michael,Doe,"Lee's Summit","Market Street",64082,MO,1321,NULL
+2,Nathan,Good,"Lee's Summit","Regatta Dr",64082,MO,5342,NULL
+3,Carson,Keplar,Raytown,"Opal Street",64133,MO,7894,NULL
+4,Grady,Newman,Grandview,"June Street",64030,MO,4127,NULL
+5,Joe,Smith,Grandview,"Loop Road",64030,MO,6381,NULL
+6,James,Johnny,"Lee's Summit",Nual,64015,MO,1818,NULL
+7,Naiveah,Lane,"Lee's Summit",Veal,64064,MO,1496,NULL
+8,Bob,Jones,"Blue Springs",Lavarn,64064,MO,1515,NULL
+9,Caitlyn,Kilpner,"Lee's Summit",Blipblorp,64013,MO,2401,NULL
+10,Steve,Miller,Gladstone,Jipjup,64024,MO,9889,NULL

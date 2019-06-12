@@ -1,0 +1,7 @@
+FirstName	LastName	HomeNum		Street		City		State		Zip
+
+James		Johnny		1818		Nual		Lee's Summit	Missouri	64015
+Naiveah		Lane		1496		Veal		Lee's Summit	Missouri	64064
+Bob		Jones		1515		Lavarn		Blue Springs	Missouri	64064
+Caitlyn		Kilpner		2401		Blipblorp	Lee's Summit	Missouri	64013
+Steve		Miller		9889		Jipjup		Gladstone	Missouri	64024	
